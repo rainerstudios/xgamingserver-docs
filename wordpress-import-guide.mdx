@@ -1,0 +1,57 @@
+---
+title: "Importing from WordPress"
+description: "Guide for importing WordPress content into the documentation"
+---
+
+# Importing Content from WordPress
+
+This guide explains how to import content from your WordPress site into the XGamingServer documentation.
+
+## Prerequisites
+
+- A WordPress XML export file
+- Linux/WSL environment with `xmlstarlet` installed
+- Basic command line knowledge
+
+## Step 1: Export WordPress Content
+
+1. Log in to your WordPress admin dashboard
+2. Go to Tools > Export
+3. Choose to export "All content"
+4. Download the XML file
+
+## Step 2: Run the Import Script
+
+1. Place the WordPress XML export file in the same directory as the `import-from-wordpress.sh` script
+2. Update the `WORDPRESS_EXPORT_FILE` variable in the script to match your export filename
+3. Run the script:
+
+```bash
+chmod +x import-from-wordpress.sh
+./import-from-wordpress.sh
+```
+
+## Step 3: Organize Imported Content
+
+1. The script will create a `wordpress_content` directory with MDX files
+2. Review each file and move it to the appropriate game directory
+3. Rename files according to the guide structure (e.g., `setup.mdx`, `configuration.mdx`)
+4. Update any internal links or image paths
+
+## Step 4: Process Images
+
+1. Download images from your WordPress site
+2. Place them in the appropriate `images/games/[game-name]` directories
+3. Update image references in MDX files from WordPress URL to local path
+
+## Step 5: Test the Documentation
+
+1. Run `mintlify dev` to preview the documentation
+2. Check that all imported content displays correctly
+3. Fix any formatting issues or broken links
+
+## Additional Resources
+
+- [Mintlify Documentation](https://mintlify.com/docs)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [WordPress XML Export Documentation](https://wordpress.org/support/article/tools-export-screen/)

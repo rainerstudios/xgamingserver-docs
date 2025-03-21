@@ -1,0 +1,157 @@
+---
+title: "Server Backup System"
+description: "How to set up and manage automatic backups for your game server"
+icon: "database"
+---
+
+# Setting Up Automatic Server Backups
+
+Regular backups are crucial for protecting your game server data. This guide explains how to set up, manage, and restore backups using the XGamingServer control panel.
+
+## Backup System Overview
+
+The XGamingServer backup system allows you to:
+- Create manual backups at any time
+- Schedule automatic backups at regular intervals
+- Download backups to your local computer
+- Restore backups to your server
+- Configure backup rotation policies
+
+## Creating Manual Backups
+
+To create a backup immediately:
+
+1. Log in to your [XGamingServer control panel](https://panel.xgamingserver.com)
+2. Select your game server
+3. Navigate to the **Backups** tab
+4. Click the **Create Backup** button
+5. Enter an optional name for your backup (recommended for easy identification)
+6. Select which folders/files to include
+7. Click **Create Backup**
+
+<Frame>
+  <img src="/images/game-panel/create-backup.jpg" alt="Creating a Manual Backup" />
+</Frame>
+
+<Note>
+  Creating a backup may temporarily increase server load. For large servers, we recommend scheduling backups during low-activity periods.
+</Note>
+
+## Setting Up Scheduled Backups
+
+To set up automatic backups:
+
+1. Go to the **Schedules** tab in your server's control panel
+2. Click **Create Schedule**
+3. Select **Backup** as the task type
+4. Configure the following settings:
+   - **Name**: Give your backup schedule a descriptive name
+   - **Frequency**: Choose how often the backup should run
+   - **First Run**: Set when the first backup should occur
+   - **Files to backup**: Select which directories to include
+   - **Backup retention**: How many backups to keep before rotation
+
+<Frame>
+  <img src="/images/game-panel/scheduled-backup.jpg" alt="Configuring Scheduled Backups" />
+</Frame>
+
+### Recommended Backup Frequencies
+
+| Server Type | Recommended Frequency | Retention |
+|-------------|----------------------|-----------|
+| Low activity | Weekly | 4 backups |
+| Medium activity | Twice weekly | 6 backups |
+| High activity | Daily | 7 backups |
+| Mission critical | Twice daily | 10 backups |
+
+## Managing Your Backups
+
+All your backups are listed in the **Backups** tab. For each backup, you can:
+
+- **Download**: Save the backup to your local computer
+- **Restore**: Restore this backup to your server
+- **Lock**: Prevent the backup from being automatically deleted during rotation
+- **Delete**: Permanently remove the backup
+
+<Warning>
+  Restoring a backup will overwrite existing files on your server. Make sure you have a backup of your current state before restoring an older backup.
+</Warning>
+
+## Backup Rotation
+
+Backup rotation helps manage storage space by automatically removing old backups. Here's how it works:
+
+1. You set the maximum number of backups to keep (retention policy)
+2. When this limit is reached, the oldest unlocked backup is deleted
+3. Locked backups are never automatically deleted
+
+To lock an important backup:
+1. Go to the **Backups** tab
+2. Find the backup you want to protect
+3. Click the **Lock** icon
+
+<Tip>
+  Lock important backups like those taken before major updates or significant server changes.
+</Tip>
+
+## Restoring From a Backup
+
+To restore your server from a backup:
+
+1. Go to the **Backups** tab
+2. Find the backup you want to restore
+3. Click the **Restore** button
+4. Confirm the restoration
+
+<Warning>
+  Restoring a backup will stop your server during the process. Players will be disconnected until the restoration is complete and the server is restarted.
+</Warning>
+
+The restoration process:
+1. Stops the game server
+2. Extracts the backup
+3. Replaces the current files with the backup files
+4. Restarts the server (if it was running before)
+
+## Downloading Backups
+
+To download a backup to your computer:
+
+1. Go to the **Backups** tab
+2. Find the backup you want to download
+3. Click the **Download** button
+4. Save the file to your preferred location
+
+<Note>
+  Backups are compressed archives. You'll need a program like 7-Zip, WinRAR, or a similar utility to extract them.
+</Note>
+
+## Best Practices for Server Backups
+
+- **Multiple backup schedules**: Consider having both daily and weekly backup schedules
+- **Test your backups**: Periodically restore a backup in a test environment to ensure it works
+- **External storage**: Download important backups to your local computer for extra safety
+- **Document changes**: Add notes to your backups describing major server changes
+- **Pre-update backups**: Always create a backup before installing updates or making significant changes
+
+## Troubleshooting Backup Issues
+
+### Backup Creation Fails
+
+If your backup fails to create:
+1. Check if you have sufficient storage space on your server plan
+2. Ensure the server isn't experiencing excessive load
+3. Try creating a backup with fewer files/directories
+4. Contact support if the issue persists
+
+### Backup Restoration Fails
+
+If your backup fails to restore:
+1. Verify the backup file isn't corrupted
+2. Check server logs for specific error messages
+3. Ensure you have sufficient storage space for the restored files
+4. Try restarting the server before attempting restoration again
+
+## Need More Help?
+
+If you need assistance with backups, please [contact our support team](mailto:support@xgamingserver.com) or visit our [knowledge base](https://help.xgamingserver.com).

@@ -1,0 +1,179 @@
+---
+title: "Configuring Server Restart Schedules"
+description: "How to set up automatic server restarts and scheduled tasks"
+icon: "clock"
+---
+
+# Configuring Server Restart Schedules
+
+Regular server restarts help maintain server performance, apply updates, and clear memory leaks. This guide will show you how to set up automated restart schedules and other recurring tasks on your XGamingServer.
+
+## Why Schedule Server Restarts?
+
+Scheduled restarts provide several benefits:
+
+- Improved server performance and stability
+- Automatic clearing of RAM usage
+- Application of small updates without manual intervention
+- Prevention of common issues that develop over time
+- Predictable downtime for your players
+
+## Accessing the Scheduler
+
+To access the scheduling system:
+
+1. Log in to your [XGamingServer control panel](https://panel.xgamingserver.com)
+2. Select your game server
+3. Navigate to the **Schedules** tab
+4. Click the **Create Schedule** button
+
+<Frame>
+  <img src="/images/game-panel/schedules-panel.jpg" alt="Server Schedules Panel" />
+</Frame>
+
+## Creating a Basic Restart Schedule
+
+To set up a basic server restart schedule:
+
+1. Click **Create Schedule**
+2. Enter a name for your schedule (e.g., "Daily Morning Restart")
+3. Select your schedule timing:
+   - **Minute**: The minute of the hour (0-59)
+   - **Hour**: The hour of the day (0-23, using 24-hour format)
+   - **Day of Month**: The day of the month (1-31)
+   - **Month**: The month of the year (1-12)
+   - **Day of Week**: The day of the week (0-6, where 0 is Sunday)
+4. Select **Send Command** as the task type
+5. In the command field, enter a restart command appropriate for your game
+6. Enable the **Only When Server Is Online** option
+7. Click **Create Schedule**
+
+<Frame>
+  <img src="/images/game-panel/create-schedule.jpg" alt="Creating a Restart Schedule" />
+</Frame>
+
+### Common Restart Commands
+
+Different games may use different restart commands:
+
+| Game | Restart Command |
+|------|----------------|
+| Minecraft | `say Server restarting in 1 minute! && sleep 50 && say Server restarting in 10 seconds! && sleep 10 && stop` |
+| Valheim | `broadcast "Server restarting in 60 seconds..." 60 server_restart` |
+| ARK | `broadcast Server restarting in 60 seconds... && save world && sleep 60 && quit` |
+| Rust | `say "Server restarting in 60 seconds" && sleep 60 && quit` |
+| 7 Days to Die | `shutdown 60` |
+
+<Tip>
+  Add warning messages to your restart commands to notify players before the server goes down.
+</Tip>
+
+## Schedule Timing Examples
+
+Here are some common scheduling patterns:
+
+| Schedule Description | Minute | Hour | Day (Month) | Month | Day (Week) |
+|---------------------|--------|------|-------------|-------|------------|
+| Every day at 3 AM | 0 | 3 | * | * | * |
+| Every 6 hours | 0 | 0,6,12,18 | * | * | * |
+| Every Sunday at 4 AM | 0 | 4 | * | * | 0 |
+| First day of every month | 0 | 0 | 1 | * | * |
+| Every 12 hours | 0 | 0,12 | * | * | * |
+
+<Info>
+  The asterisk (*) represents "every" in CRON notation. For example, * in the Month field means "every month."
+</Info>
+
+## Advanced Scheduling Options
+
+### Creating a Warning Schedule
+
+For a smoother player experience, set up warning messages before restarts:
+
+1. Create a new schedule
+2. Time it 5-10 minutes before your restart schedule
+3. Select **Send Command** as the task type
+4. Enter a warning command (e.g., `say Server will restart in 10 minutes`)
+5. Click **Create Schedule**
+
+### Chaining Multiple Commands
+
+You can chain multiple commands in a single schedule by using `&&` between commands:
+
+```
+say Server maintenance in 5 minutes && sleep 240 && say Server maintenance in 1 minute && sleep 60 && stop
+```
+
+### Running a Specific Game Script
+
+If your game uses scripts for certain functions:
+
+1. Create a new schedule
+2. Select **Send Command** as the task type
+3. Reference your script (e.g., `runscript backup_world.lua`)
+4. Click **Create Schedule**
+
+## Managing Your Schedules
+
+To manage your existing schedules:
+
+- **Edit**: Click the edit button next to a schedule to modify its settings
+- **Delete**: Click the delete button to remove a schedule
+- **Disable/Enable**: Toggle the switch to temporarily disable or enable a schedule
+- **Run Now**: Click the "Run Now" button to execute a schedule immediately
+
+<Frame>
+  <img src="/images/game-panel/manage-schedules.jpg" alt="Managing Schedules" />
+</Frame>
+
+## Best Practices for Server Restarts
+
+- **Off-peak scheduling**: Schedule restarts during low-activity periods
+- **Consistent timing**: Use the same time each day to create a predictable pattern for players
+- **Multiple warnings**: Set up multiple warning messages (e.g., at 10 minutes, 5 minutes, and 1 minute)
+- **Avoid frequent restarts**: Most servers only need 1-2 restarts per day
+- **Document for players**: Let your community know about your restart schedule
+
+## Game-Specific Recommendations
+
+### Minecraft Servers
+
+For Minecraft servers, a common schedule includes:
+- A restart every 6-12 hours
+- A memory cleanup command 30 minutes before restart
+- Clear warning messages for players
+
+### Valheim Servers
+
+For Valheim servers:
+- A restart every 24 hours is usually sufficient
+- Use the broadcast command to warn players
+- Consider scheduling during typical off-hours for your player base
+
+### ARK: Survival Evolved
+
+For ARK servers:
+- Schedule restarts every 12 hours
+- Always include a `save world` command before restarting
+- Give players at least 15 minutes of warnings
+
+## Troubleshooting Scheduled Tasks
+
+### Schedule Not Running
+
+If your schedule isn't running:
+1. Verify the server is online (if you selected "Only When Server Is Online")
+2. Check that the timing configuration is correct
+3. Ensure the command syntax is appropriate for your game
+4. Check server logs for errors
+
+### Command Errors
+
+If your scheduled command produces errors:
+1. Test the command manually in the console first
+2. Check server logs immediately after the scheduled time
+3. Verify you're using the correct command format for your game version
+
+## Need More Help?
+
+If you need assistance with scheduling, please [contact our support team](mailto:support@xgamingserver.com) or visit our [knowledge base](https://help.xgamingserver.com).

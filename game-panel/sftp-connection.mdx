@@ -1,0 +1,136 @@
+---
+title: "SFTP Server Connection"
+description: "How to connect to your game server using SFTP"
+icon: "network-wired"
+---
+
+# SFTP Server Connection Guide
+
+Secure File Transfer Protocol (SFTP) provides a secure way to transfer files between your computer and your game server. This guide will walk you through setting up and using an SFTP connection.
+
+## What You'll Need
+
+- An SFTP client such as [FileZilla](https://filezilla-project.org/), [WinSCP](https://winscp.net/), or [Cyberduck](https://cyberduck.io/)
+- Your server's SFTP credentials (available in your XGamingServer control panel)
+
+## Finding Your SFTP Credentials
+
+1. Log in to your [XGamingServer control panel](https://panel.xgamingserver.com)
+2. Select your game server
+3. Navigate to the **Settings** tab
+4. Look for the **SFTP Details** section
+
+You'll need the following information:
+- Server Address
+- Port
+- Username
+- Password
+
+<Frame>
+  <img src="/images/game-panel/sftp-credentials.jpg" alt="SFTP Credentials in Control Panel" />
+</Frame>
+
+## Connecting with FileZilla
+
+FileZilla is one of the most popular SFTP clients. Here's how to connect:
+
+1. Open FileZilla
+2. Enter your SFTP credentials in the quickconnect bar at the top:
+   - Host: Your SFTP address (e.g., `sftp.xgamingserver.com`)
+   - Username: Your SFTP username
+   - Password: Your SFTP password
+   - Port: Your SFTP port (typically 2022)
+3. Click **Quickconnect**
+
+<Frame>
+  <img src="/images/game-panel/filezilla-connection.jpg" alt="FileZilla Connection Example" />
+</Frame>
+
+## Connecting with WinSCP
+
+1. Open WinSCP
+2. In the login dialog, enter the following:
+   - File protocol: SFTP
+   - Host name: Your SFTP address
+   - Port number: Your SFTP port
+   - User name: Your SFTP username
+   - Password: Your SFTP password
+3. Click **Login**
+
+## Navigating Your Server Files
+
+Once connected, you'll see:
+- Local files on the left side (your computer)
+- Remote files on the right side (your game server)
+
+<Frame>
+  <img src="/images/game-panel/sftp-file-navigation.jpg" alt="SFTP File Navigation" />
+</Frame>
+
+## Transferring Files
+
+### Uploading Files to Your Server
+
+1. Navigate to the desired folder on your server
+2. Find the file(s) you want to upload on your local computer
+3. Drag and drop the file(s) from the left panel to the right panel
+4. Wait for the transfer to complete
+
+### Downloading Files from Your Server
+
+1. Navigate to the folder containing the files you want to download
+2. Select the file(s) on the server side (right panel)
+3. Drag and drop the file(s) from the right panel to the left panel
+4. Wait for the transfer to complete
+
+## Common File Operations
+
+- **Create a new folder**: Right-click in the file browser and select "Create directory"
+- **Delete files/folders**: Right-click on the item and select "Delete"
+- **Rename files/folders**: Right-click on the item and select "Rename"
+- **Edit files**: Right-click on a file and select "View/Edit" (if your SFTP client supports it)
+
+## Setting File Permissions
+
+Some game servers require specific file permissions to function correctly:
+
+1. Right-click on the file/folder
+2. Select "File permissions" or "Properties"
+3. Adjust the permissions as needed
+   - Most files: 644 (rw-r--r--)
+   - Most folders: 755 (rwxr-xr-x)
+   - Executable files: 755 (rwxr-xr-x)
+
+<Warning>
+  Incorrect file permissions can cause your server to malfunction. If you're unsure about changing permissions, consult your game's documentation or contact support.
+</Warning>
+
+## Troubleshooting SFTP Connections
+
+### Cannot Connect to Server
+
+1. Verify your credentials are correct
+2. Check if the server is online
+3. Ensure your firewall isn't blocking the SFTP port
+4. Try connecting with a different SFTP client
+
+### Slow Transfer Speeds
+
+1. Check your internet connection
+2. Try transferring smaller batches of files
+3. Use compression if your SFTP client supports it
+4. Consider using a wired connection instead of Wi-Fi
+
+### Connection Timeout
+
+1. Check your internet stability
+2. Increase the timeout setting in your SFTP client
+3. Try reconnecting during off-peak hours
+
+## Additional Resources
+
+- [FileZilla Documentation](https://wiki.filezilla-project.org/Documentation)
+- [WinSCP Documentation](https://winscp.net/eng/docs/start)
+- [Video Tutorial: SFTP Connection Guide](https://www.youtube.com/watch?v=example)
+
+If you continue experiencing issues with SFTP connections, please [contact our support team](mailto:support@xgamingserver.com).

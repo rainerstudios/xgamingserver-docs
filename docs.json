@@ -11,10 +11,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Game Servers",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
               "introduction",
               "quickstart",
@@ -31,78 +31,429 @@
               "essentials/navigation",
               "essentials/reusable-snippets"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Games",
-        "groups": [
+          },
           {
             "group": "Survival Games",
+            "icon": "campground",
+            "collapsed": true,
             "pages": [
-              "games/survival/valheim",
-              "games/survival/palworld",
-              "games/survival/enshrouded",
-              "games/survival/project-zomboid",
-              "games/survival/7-days-to-die",
-              "games/survival/v-rising",
-              "games/survival/rust",
-              "games/survival/ark-survival-evolved",
-              "games/survival/the-forest",
-              "games/survival/sons-of-the-forest",
-              "games/survival/subnautica",
-              "games/survival/unturned",
-              "games/survival/myth-of-empires",
-              "games/survival/nightingale",
-              "games/survival/humanitz",
-              "games/survival/abiotic-factor",
-              "games/survival/soulmask",
-              "games/survival/sunkenland",
-              "games/survival/aska",
-              "games/survival/jaws-of-extinction",
-              "games/survival/vein"
+              {
+                "group": "Valheim",
+                "icon": "shield",
+                "pages": [
+                  "games/valheim/index",
+                  "games/valheim/setup",
+                  "games/valheim/requirements",
+                  "games/valheim/configuration",
+                  "games/valheim/admin-commands",
+                  "games/valheim/mods",
+                  "games/valheim/world-settings",
+                  "games/valheim/performance",
+                  "games/valheim/backups",
+                  "games/valheim/common-issues",
+                  "games/valheim/connection-issues",
+                  "games/valheim/crashes",
+                  "games/valheim/faq"
+                ]
+              },
+              {
+                "group": "7 Days To Die",
+                "icon": "biohazard",
+                "pages": [
+                  "games/7-days-to-die/index",
+                  "games/7-days-to-die/setup",
+                  "games/7-days-to-die/configuration",
+                  "games/7-days-to-die/common-issues"
+                ]
+              },
+              {
+                "group": "ARK: Survival Evolved",
+                "icon": "dinosaur",
+                "pages": [
+                  "games/ark-survival-evolved/index",
+                  "games/ark-survival-evolved/setup",
+                  "games/ark-survival-evolved/configuration",
+                  "games/ark-survival-evolved/common-issues"
+                ]
+              },
+              {
+                "group": "Palworld",
+                "icon": "dragon",
+                "pages": [
+                  "games/palworld/index",
+                  "games/palworld/setup",
+                  "games/palworld/configuration",
+                  "games/palworld/common-issues"
+                ]
+              },
+              {
+                "group": "Rust",
+                "icon": "wrench",
+                "pages": [
+                  "games/rust/index",
+                  "games/rust/setup",
+                  "games/rust/configuration",
+                  "games/rust/common-issues"
+                ]
+              },
+              {
+                "group": "V Rising",
+                "icon": "droplet",
+                "pages": [
+                  "games/v-rising/index",
+                  "games/v-rising/setup",
+                  "games/v-rising/configuration",
+                  "games/v-rising/common-issues"
+                ]
+              },
+              {
+                "group": "Project Zomboid",
+                "icon": "person-walking",
+                "pages": [
+                  "games/project-zomboid/index",
+                  "games/project-zomboid/setup",
+                  "games/project-zomboid/configuration",
+                  "games/project-zomboid/common-issues"
+                ]
+              },
+              {
+                "group": "Enshrouded",
+                "icon": "cloud-fog",
+                "pages": [
+                  "games/enshrouded/index",
+                  "games/enshrouded/setup",
+                  "games/enshrouded/configuration",
+                  "games/enshrouded/common-issues"
+                ]
+              },
+              {
+                "group": "The Forest",
+                "icon": "trees",
+                "pages": [
+                  "games/the-forest/index",
+                  "games/the-forest/setup",
+                  "games/the-forest/configuration",
+                  "games/the-forest/common-issues"
+                ]
+              },
+              {
+                "group": "Sons of the Forest",
+                "icon": "tree",
+                "pages": [
+                  "games/sons-of-the-forest/index",
+                  "games/sons-of-the-forest/setup",
+                  "games/sons-of-the-forest/configuration",
+                  "games/sons-of-the-forest/common-issues"
+                ]
+              },
+              {
+                "group": "Other Survival Games",
+                "pages": [
+                  {
+                    "group": "Subnautica",
+                    "icon": "water",
+                    "pages": ["games/subnautica/index"]
+                  },
+                  {
+                    "group": "Unturned",
+                    "icon": "face-dizzy",
+                    "pages": ["games/unturned/index"]
+                  },
+                  {
+                    "group": "Myth of Empires",
+                    "icon": "crown",
+                    "pages": ["games/myth-of-empires/index"]
+                  },
+                  {
+                    "group": "Nightingale",
+                    "icon": "moon-stars",
+                    "pages": ["games/nightingale/index"]
+                  },
+                  {
+                    "group": "HumanitZ",
+                    "icon": "skull",
+                    "pages": ["games/humanitz/index"]
+                  },
+                  {
+                    "group": "Abiotic Factor",
+                    "icon": "vial-virus",
+                    "pages": ["games/abiotic-factor/index"]
+                  },
+                  {
+                    "group": "Soulmask",
+                    "icon": "mask",
+                    "pages": ["games/soulmask/index"]
+                  },
+                  {
+                    "group": "Sunkenland",
+                    "icon": "island",
+                    "pages": ["games/sunkenland/index"]
+                  },
+                  {
+                    "group": "Aska",
+                    "icon": "axe-battle",
+                    "pages": ["games/aska/index"]
+                  },
+                  {
+                    "group": "Jaws of Extinction",
+                    "icon": "teeth",
+                    "pages": ["games/jaws-of-extinction/index"]
+                  },
+                  {
+                    "group": "Vein",
+                    "icon": "heart-pulse",
+                    "pages": ["games/vein/index"]
+                  }
+                ]
+              }
             ]
           },
           {
             "group": "Sandbox & Creative",
+            "icon": "cubes",
+            "collapsed": true,
             "pages": [
-              "games/sandbox/core-keeper",
-              "games/sandbox/terraria",
-              "games/sandbox/minecraft",
-              "games/sandbox/garrys-mod",
-              "games/sandbox/satisfactory",
-              "games/sandbox/factorio",
-              "games/sandbox/dont-starve-together",
-              "games/sandbox/aloft"
+              {
+                "group": "Minecraft",
+                "icon": "cube",
+                "pages": [
+                  "games/minecraft/index",
+                  "games/minecraft/setup",
+                  "games/minecraft/configuration",
+                  "games/minecraft/common-issues"
+                ]
+              },
+              {
+                "group": "Terraria",
+                "icon": "pickaxe",
+                "pages": [
+                  "games/terraria/index",
+                  "games/terraria/setup",
+                  "games/terraria/configuration",
+                  "games/terraria/common-issues"
+                ]
+              },
+              {
+                "group": "Core Keeper",
+                "icon": "gem",
+                "pages": [
+                  "games/core-keeper/index",
+                  "games/core-keeper/setup",
+                  "games/core-keeper/configuration",
+                  "games/core-keeper/common-issues"
+                ]
+              },
+              {
+                "group": "Garry's Mod",
+                "icon": "toolbox",
+                "pages": [
+                  "games/garrys-mod/index",
+                  "games/garrys-mod/setup",
+                  "games/garrys-mod/configuration",
+                  "games/garrys-mod/common-issues"
+                ]
+              },
+              {
+                "group": "Satisfactory",
+                "icon": "conveyor-belt",
+                "pages": [
+                  "games/satisfactory/index",
+                  "games/satisfactory/setup",
+                  "games/satisfactory/configuration",
+                  "games/satisfactory/common-issues"
+                ]
+              },
+              {
+                "group": "Factorio",
+                "icon": "industry",
+                "pages": [
+                  "games/factorio/index",
+                  "games/factorio/setup",
+                  "games/factorio/configuration",
+                  "games/factorio/common-issues"
+                ]
+              },
+              {
+                "group": "Don't Starve Together",
+                "icon": "utensils",
+                "pages": [
+                  "games/dont-starve-together/index",
+                  "games/dont-starve-together/setup",
+                  "games/dont-starve-together/configuration",
+                  "games/dont-starve-together/common-issues"
+                ]
+              },
+              {
+                "group": "Aloft",
+                "icon": "cloud",
+                "pages": [
+                  "games/aloft/index",
+                  "games/aloft/setup",
+                  "games/aloft/configuration",
+                  "games/aloft/common-issues"
+                ]
+              }
             ]
           },
           {
             "group": "Action & Shooter",
+            "icon": "gun",
+            "collapsed": true,
             "pages": [
-              "games/action/arma-3",
-              "games/action/arma-reforger",
-              "games/action/counter-strike-go",
-              "games/action/counter-strike-2",
-              "games/action/mordhau",
-              "games/action/risk-of-rain-2",
-              "games/action/skyrim-together-reborn",
-              "games/action/the-front"
+              {
+                "group": "Counter-Strike 2",
+                "icon": "crosshairs",
+                "pages": [
+                  "games/counter-strike-2/index",
+                  "games/counter-strike-2/setup",
+                  "games/counter-strike-2/configuration",
+                  "games/counter-strike-2/common-issues"
+                ]
+              },
+              {
+                "group": "CS:GO",
+                "icon": "gun",
+                "pages": [
+                  "games/counter-strike-go/index",
+                  "games/counter-strike-go/setup",
+                  "games/counter-strike-go/configuration",
+                  "games/counter-strike-go/common-issues"
+                ]
+              },
+              {
+                "group": "Arma 3",
+                "icon": "helicopter",
+                "pages": [
+                  "games/arma-3/index",
+                  "games/arma-3/setup",
+                  "games/arma-3/configuration",
+                  "games/arma-3/common-issues"
+                ]
+              },
+              {
+                "group": "Arma Reforger",
+                "icon": "tank",
+                "pages": [
+                  "games/arma-reforger/index",
+                  "games/arma-reforger/setup",
+                  "games/arma-reforger/configuration",
+                  "games/arma-reforger/common-issues"
+                ]
+              },
+              {
+                "group": "Mordhau",
+                "icon": "sword",
+                "pages": [
+                  "games/mordhau/index",
+                  "games/mordhau/setup",
+                  "games/mordhau/configuration",
+                  "games/mordhau/common-issues"
+                ]
+              },
+              {
+                "group": "Risk of Rain 2",
+                "icon": "cloud-rain",
+                "pages": [
+                  "games/risk-of-rain-2/index",
+                  "games/risk-of-rain-2/setup",
+                  "games/risk-of-rain-2/configuration",
+                  "games/risk-of-rain-2/common-issues"
+                ]
+              },
+              {
+                "group": "Skyrim Together Reborn",
+                "icon": "dragon-knight",
+                "pages": [
+                  "games/skyrim-together-reborn/index",
+                  "games/skyrim-together-reborn/setup",
+                  "games/skyrim-together-reborn/configuration",
+                  "games/skyrim-together-reborn/common-issues"
+                ]
+              },
+              {
+                "group": "The Front",
+                "icon": "helmet-battle",
+                "pages": [
+                  "games/the-front/index",
+                  "games/the-front/setup",
+                  "games/the-front/configuration",
+                  "games/the-front/common-issues"
+                ]
+              }
             ]
           },
           {
             "group": "Simulation",
+            "icon": "gauge-high",
+            "collapsed": true,
             "pages": [
-              "games/simulation/assetto-corsa",
-              "games/simulation/euro-truck-simulator-2"
+              {
+                "group": "Assetto Corsa",
+                "icon": "car-side",
+                "pages": [
+                  "games/assetto-corsa/index",
+                  "games/assetto-corsa/setup",
+                  "games/assetto-corsa/configuration",
+                  "games/assetto-corsa/common-issues"
+                ]
+              },
+              {
+                "group": "Euro Truck Simulator 2",
+                "icon": "truck",
+                "pages": [
+                  "games/euro-truck-simulator-2/index",
+                  "games/euro-truck-simulator-2/setup",
+                  "games/euro-truck-simulator-2/configuration",
+                  "games/euro-truck-simulator-2/common-issues"
+                ]
+              }
             ]
           },
           {
             "group": "Other Hosting",
+            "icon": "server",
+            "collapsed": true,
             "pages": [
-              "games/other/discord-bot-hosting",
-              "games/other/bungeecord",
-              "games/other/foundry",
-              "games/other/palworld-crossplay"
+              {
+                "group": "Discord Bot Hosting",
+                "icon": "robot",
+                "pages": [
+                  "games/discord-bot-hosting/index",
+                  "games/discord-bot-hosting/setup",
+                  "games/discord-bot-hosting/configuration",
+                  "games/discord-bot-hosting/common-issues"
+                ]
+              },
+              {
+                "group": "Bungeecord",
+                "icon": "network-wired",
+                "pages": [
+                  "games/bungeecord/index",
+                  "games/bungeecord/setup",
+                  "games/bungeecord/configuration",
+                  "games/bungeecord/common-issues"
+                ]
+              },
+              {
+                "group": "FOUNDRY",
+                "icon": "dice-d20",
+                "pages": [
+                  "games/foundry/index",
+                  "games/foundry/setup",
+                  "games/foundry/configuration",
+                  "games/foundry/common-issues"
+                ]
+              },
+              {
+                "group": "Palworld Crossplay",
+                "icon": "handshake",
+                "pages": [
+                  "games/palworld-crossplay/index",
+                  "games/palworld-crossplay/setup",
+                  "games/palworld-crossplay/configuration",
+                  "games/palworld-crossplay/common-issues"
+                ]
+              }
             ]
           }
         ]
@@ -127,49 +478,15 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@xgamingserver.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://panel.xgamingserver.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/xgamingserver",
-      "github": "https://github.com/xgamingserver",
-      "discord": "https://discord.gg/xgamingserver"
-    }
+  "footerSocials": {
+    "x": "https://x.com/xgamingserver",
+    "github": "https://github.com/xgamingserver",
+    "discord": "https://discord.gg/xgamingserver"
   }
 }

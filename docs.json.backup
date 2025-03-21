@@ -1,0 +1,375 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "XGamingServer Documentation",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D",
+    "background": {
+      "dark": "#111111"
+    },
+    "anchors": {
+      "from": "#16A34A",
+      "to": "#15803D"
+    }
+  },
+  "favicon": "/favicon.svg",
+  "sidebar": {
+    "enabled": true,
+    "autoCollapse": true,
+    "titleColor": "#FFFFFF",
+    "titleIconColor": "#16A34A"
+  },
+  "typography": {
+    "headings": {
+      "color": {
+        "dark": "#FFFFFF",
+        "light": "#111111" 
+      },
+      "weight": 700
+    },
+    "fontSize": {
+      "base": "16px",
+      "small": "0.875rem",
+      "h1": "2rem",
+      "h2": "1.5rem",
+      "h3": "1.25rem"
+    }
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "modeToggle": {
+    "default": "dark"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Game Servers",
+        "classes": {
+          "groupNameHeading": "text-base font-bold text-white-200"
+        },
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "development"
+            ]
+          },
+          {
+            "group": "Game Panel Guides",
+            "icon": "server-tower", 
+            "pages": [
+              "game-panel/overview",
+              "game-panel/sftp-connection",
+              "game-panel/backups",
+              "game-panel/restart-schedules",
+              "game-panel/game-swap",
+              "game-panel/server-connection",
+              "game-panel/additional-ports",
+              "game-panel/server-wipe",
+              "game-panel/ip-configuration",
+              "game-panel/file-management",
+              "game-panel/subdomains",
+              "game-panel/server-importer",
+              "game-panel/config-editing"
+            ]
+          },
+          {
+            "group": "Survival Games",
+            "icon": "campground",
+            "classes": {
+              "heading": "text-base font-bold text-green-400 border-l-4 border-green-500 pl-2",
+              "link": "font-bold"
+            },
+            "collapsed": true,
+            "pages": [
+              {
+                "group": "Valheim",
+                "icon": "shield",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/valheim/index",
+                  "games/valheim/setup",
+                  "games/valheim/requirements",
+                  "games/valheim/configuration",
+                  "games/valheim/admin-commands",
+                  "games/valheim/mods",
+                  "games/valheim/world-settings",
+                  "games/valheim/performance",
+                  "games/valheim/backups",
+                  "games/valheim/common-issues",
+                  "games/valheim/connection-issues",
+                  "games/valheim/crashes",
+                  "games/valheim/faq"
+                ]
+              },
+              {
+                "group": "7 Days To Die",
+                "icon": "biohazard",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/7-days-to-die/index",
+                  "games/7-days-to-die/setup",
+                  "games/7-days-to-die/configuration",
+                  "games/7-days-to-die/common-issues"
+                ]
+              },
+              {
+                "group": "ARK: Survival Evolved",
+                "icon": "dinosaur",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/ark-survival-evolved/index",
+                  "games/ark-survival-evolved/setup",
+                  "games/ark-survival-evolved/configuration",
+                  "games/ark-survival-evolved/common-issues"
+                ]
+              },
+              {
+                "group": "Palworld",
+                "icon": "dragon",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/palworld/index",
+                  "games/palworld/setup",
+                  "games/palworld/configuration",
+                  "games/palworld/common-issues"
+                ]
+              },
+              {
+                "group": "Rust",
+                "icon": "wrench",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/rust/index",
+                  "games/rust/setup",
+                  "games/rust/configuration",
+                  "games/rust/common-issues"
+                ]
+              },
+              {
+                "group": "V Rising",
+                "icon": "droplet",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/v-rising/index",
+                  "games/v-rising/setup",
+                  "games/v-rising/configuration",
+                  "games/v-rising/common-issues"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Sandbox & Creative",
+            "icon": "cubes",
+            "classes": {
+              "heading": "text-base font-bold text-green-400 border-l-4 border-green-500 pl-2",
+              "link": "font-bold"
+            },
+            "collapsed": true,
+            "pages": [
+              {
+                "group": "Minecraft",
+                "icon": "cube",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/minecraft/index",
+                  "games/minecraft/setup",
+                  "games/minecraft/configuration",
+                  "games/minecraft/common-issues"
+                ]
+              },
+              {
+                "group": "Terraria",
+                "icon": "pickaxe",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/terraria/index",
+                  "games/terraria/setup",
+                  "games/terraria/configuration",
+                  "games/terraria/common-issues"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Action & Shooter",
+            "icon": "gun",
+            "classes": {
+              "heading": "text-base font-bold text-green-400 border-l-4 border-green-500 pl-2",
+              "link": "font-bold"
+            },
+            "collapsed": true,
+            "pages": [
+              {
+                "group": "Counter-Strike 2",
+                "icon": "crosshairs",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/counter-strike-2/index",
+                  "games/counter-strike-2/setup",
+                  "games/counter-strike-2/configuration",
+                  "games/counter-strike-2/common-issues"
+                ]
+              },
+              {
+                "group": "CS:GO",
+                "icon": "gun",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/counter-strike-go/index",
+                  "games/counter-strike-go/setup",
+                  "games/counter-strike-go/configuration",
+                  "games/counter-strike-go/common-issues"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Simulation",
+            "icon": "gauge-high",
+            "classes": {
+              "heading": "text-base font-bold text-green-400 border-l-4 border-green-500 pl-2",
+              "link": "font-bold"
+            },
+            "collapsed": true,
+            "pages": [
+              {
+                "group": "Assetto Corsa",
+                "icon": "car-side",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/assetto-corsa/index",
+                  "games/assetto-corsa/setup",
+                  "games/assetto-corsa/configuration",
+                  "games/assetto-corsa/common-issues"
+                ]
+              },
+              {
+                "group": "Euro Truck Simulator 2",
+                "icon": "truck",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/euro-truck-simulator-2/index",
+                  "games/euro-truck-simulator-2/setup",
+                  "games/euro-truck-simulator-2/configuration",
+                  "games/euro-truck-simulator-2/common-issues"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Other Hosting",
+            "icon": "server",
+            "classes": {
+              "heading": "text-base font-bold text-green-400 border-l-4 border-green-500 pl-2",
+              "link": "font-bold"
+            },
+            "collapsed": true,
+            "pages": [
+              {
+                "group": "Discord Bot Hosting",
+                "icon": "robot",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/discord-bot-hosting/index",
+                  "games/discord-bot-hosting/setup",
+                  "games/discord-bot-hosting/configuration",
+                  "games/discord-bot-hosting/common-issues"
+                ]
+              },
+              {
+                "group": "Bungeecord",
+                "icon": "network-wired",
+                "classes": {
+                  "link": "font-semibold text-white",
+                  "heading": "hover:bg-green-400/10 p-1 rounded border-l-2 border-transparent hover:border-green-400"
+                },
+                "pages": [
+                  "games/bungeecord/index",
+                  "games/bungeecord/setup",
+                  "games/bungeecord/configuration",
+                  "games/bungeecord/common-issues"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint Examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "footerSocials": {
+    "x": "https://x.com/xgamingserver",
+    "github": "https://github.com/xgamingserver",
+    "discord": "https://discord.gg/xgamingserver"
+  }
+}
