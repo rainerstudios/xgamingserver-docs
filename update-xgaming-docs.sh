@@ -1,13 +1,21 @@
 #!/bin/bash
-# Script to integrate Game Panel guides into XGamingServer documentation
+# Script to add Game Panel guides to XGamingServer documentation without disrupting existing navigation
 
 # Colors for terminal output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
+RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-echo -e "${BLUE}XGamingServer Documentation Setup Script${NC}"
+echo -e "${BLUE}XGamingServer Documentation Update Script${NC}"
 echo "This script will add Game Panel guides to your documentation"
+
+# Check if docs.json exists
+if [ ! -f docs.json ]; then
+  echo -e "${RED}Error: docs.json not found in the current directory${NC}"
+  echo "Please run this script from your documentation root directory"
+  exit 1
+fi
 
 # Create directories
 echo -e "${GREEN}Creating game-panel directory and files...${NC}"
@@ -686,144 +694,41 @@ touch images/game-panel/schedules-panel.jpg
 touch images/game-panel/create-schedule.jpg
 touch images/game-panel/manage-schedules.jpg
 
-# Update docs.json to add the game panel section
-echo -e "${GREEN}Creating updated docs.json with game panel section...${NC}"
-cat > docs.json.new << 'EOL'
+# Create navigation patch file
+echo -e "${GREEN}Creating navigation update file...${NC}"
+cat > game-panel-navigation.json << 'EOL'
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "XGamingServer Documentation",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Game Servers",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Game Panel Guides",
-            "icon": "server-tower",
-            "pages": [
-              "game-panel/overview",
-              "game-panel/sftp-connection",
-              "game-panel/backups",
-              "game-panel/restart-schedules",
-              "game-panel/game-swap",
-              "game-panel/server-connection",
-              "game-panel/additional-ports",
-              "game-panel/server-wipe",
-              "game-panel/ip-configuration",
-              "game-panel/file-management",
-              "game-panel/subdomains",
-              "game-panel/server-importer",
-              "game-panel/config-editing"
-            ]
-          },
-          {
-            "group": "Survival Games",
-            "icon": "campground",
-            "pages": [
-              "games/valheim/index",
-              "games/7-days-to-die/index",
-              "games/ark-survival-evolved/index",
-              "games/palworld/index",
-              "games/rust/index",
-              "games/v-rising/index"
-            ]
-          },
-          {
-            "group": "Sandbox & Creative",
-            "icon": "cubes",
-            "pages": [
-              "games/minecraft/index",
-              "games/terraria/index"
-            ]
-          },
-          {
-            "group": "Action & Shooter",
-            "icon": "gun",
-            "pages": [
-              "games/counter-strike-2/index",
-              "games/counter-strike-go/index"
-            ]
-          },
-          {
-            "group": "Simulation",
-            "icon": "gauge-high",
-            "pages": [
-              "games/assetto-corsa/index",
-              "games/euro-truck-simulator-2/index"
-            ]
-          },
-          {
-            "group": "Other Hosting",
-            "icon": "server",
-            "pages": [
-              "games/discord-bot-hosting/index",
-              "games/bungeecord/index"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "footerSocials": {
-    "x": "https://x.com/xgamingserver",
-    "github": "https://github.com/xgamingserver",
-    "discord": "https://discord.gg/xgamingserver"
-  }
+  "group": "Game Panel Guides",
+  "icon": "server-tower",
+  "pages": [
+    "game-panel/overview",
+    "game-panel/sftp-connection",
+    "game-panel/backups",
+    "game-panel/restart-schedules",
+    "game-panel/game-swap",
+    "game-panel/server-connection",
+    "game-panel/additional-ports",
+    "game-panel/server-wipe",
+    "game-panel/ip-configuration",
+    "game-panel/file-management",
+    "game-panel/subdomains",
+    "game-panel/server-importer",
+    "game-panel/config-editing"
+  ]
 }
 EOL
 
-# Check if original docs.json exists and handle it
-if [ -f docs.json ]; then
-  echo -e "${GREEN}Backing up original docs.json to docs.json.backup${NC}"
-  cp docs.json docs.json.backup
-  mv docs.json.new docs.json
-else
-  mv docs.json.new docs.json
-fi
-
+echo -e "${BLUE}IMPORTANT:${NC} The script has created all the necessary files but has NOT modified your docs.json"
+echo -e "To add the Game Panel Guides section to your navigation, manually insert the contents of the"
+echo -e "game-panel-navigation.json file into the appropriate location in your docs.json file."
+echo -e ""
+echo -e "Add it to your navigation structure where you want it to appear, typically after your Getting Started"
+echo -e "section and before your game categories."
+echo -e ""
 echo -e "${GREEN}Script completed successfully!${NC}"
-echo "The following files have been created or modified:"
+echo "The following files have been created:"
 echo "- game-panel/ directory with 13 guide files"
 echo "- images/game-panel/ directory with placeholder images"
-echo "- docs.json updated with new navigation structure"
+echo "- game-panel-navigation.json with the navigation structure to add manually"
 echo ""
-echo "To preview your documentation, run: mintlify dev"
+echo "To preview your documentation after updating docs.json, run: mintlify dev"
