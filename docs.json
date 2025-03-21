@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "XGamingServer Documentation",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -30,6 +30,79 @@
               "essentials/settings",
               "essentials/navigation",
               "essentials/reusable-snippets"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Games",
+        "groups": [
+          {
+            "group": "Survival Games",
+            "pages": [
+              "games/survival/valheim",
+              "games/survival/palworld",
+              "games/survival/enshrouded",
+              "games/survival/project-zomboid",
+              "games/survival/7-days-to-die",
+              "games/survival/v-rising",
+              "games/survival/rust",
+              "games/survival/ark-survival-evolved",
+              "games/survival/the-forest",
+              "games/survival/sons-of-the-forest",
+              "games/survival/subnautica",
+              "games/survival/unturned",
+              "games/survival/myth-of-empires",
+              "games/survival/nightingale",
+              "games/survival/humanitz",
+              "games/survival/abiotic-factor",
+              "games/survival/soulmask",
+              "games/survival/sunkenland",
+              "games/survival/aska",
+              "games/survival/jaws-of-extinction",
+              "games/survival/vein"
+            ]
+          },
+          {
+            "group": "Sandbox & Creative",
+            "pages": [
+              "games/sandbox/core-keeper",
+              "games/sandbox/terraria",
+              "games/sandbox/minecraft",
+              "games/sandbox/garrys-mod",
+              "games/sandbox/satisfactory",
+              "games/sandbox/factorio",
+              "games/sandbox/dont-starve-together",
+              "games/sandbox/aloft"
+            ]
+          },
+          {
+            "group": "Action & Shooter",
+            "pages": [
+              "games/action/arma-3",
+              "games/action/arma-reforger",
+              "games/action/counter-strike-go",
+              "games/action/counter-strike-2",
+              "games/action/mordhau",
+              "games/action/risk-of-rain-2",
+              "games/action/skyrim-together-reborn",
+              "games/action/the-front"
+            ]
+          },
+          {
+            "group": "Simulation",
+            "pages": [
+              "games/simulation/assetto-corsa",
+              "games/simulation/euro-truck-simulator-2"
+            ]
+          },
+          {
+            "group": "Other Hosting",
+            "pages": [
+              "games/other/discord-bot-hosting",
+              "games/other/bungeecord",
+              "games/other/foundry",
+              "games/other/palworld-crossplay"
             ]
           }
         ]
@@ -83,20 +156,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@xgamingserver.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://panel.xgamingserver.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/xgamingserver",
+      "github": "https://github.com/xgamingserver",
+      "discord": "https://discord.gg/xgamingserver"
     }
   }
 }
