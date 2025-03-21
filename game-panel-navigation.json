@@ -1,0 +1,19 @@
+{
+  "group": "Game Panel Guides",
+  "icon": "server-tower",
+  "pages": [
+    "game-panel/overview",
+    "game-panel/sftp-connection",
+    "game-panel/backups",
+    "game-panel/restart-schedules",
+    "game-panel/game-swap",
+    "game-panel/server-connection",
+    "game-panel/additional-ports",
+    "game-panel/server-wipe",
+    "game-panel/ip-configuration",
+    "game-panel/file-management",
+    "game-panel/subdomains",
+    "game-panel/server-importer",
+    "game-panel/config-editing"
+  ]
+}

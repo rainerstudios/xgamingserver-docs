@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "XGamingServer Documentation",
+  "name": "Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -20,18 +20,7 @@
               "quickstart",
               "development"
             ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          },
+          },          
           {
             "group": "Survival Games",
             "icon": "campground",
@@ -454,6 +443,87 @@
                   "games/palworld-crossplay/common-issues"
                 ]
               }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Game Panel Guides",
+        "groups": [
+          {
+            "group": "Control Panel Overview",
+            "icon": "server-tower",
+            "pages": [
+              "game-panel/overview"
+            ]
+          },
+          {
+            "group": "Server Files & Connections",
+            "icon": "file-network",
+            "pages": [
+              "game-panel/sftp-connection",
+              "game-panel/file-management",
+              "game-panel/server-connection",
+              "game-panel/additional-ports",
+              "game-panel/config-editing"
+            ]
+          },
+          {
+            "group": "Data Management",
+            "icon": "database",
+            "pages": [
+              "game-panel/backups",
+              "game-panel/server-wipe",
+              "game-panel/server-importer"
+            ]
+          },
+          {
+            "group": "Server Management",
+            "icon": "gears",
+            "pages": [
+              "game-panel/restart-schedules",
+              "game-panel/game-swap",
+              "game-panel/ip-configuration",
+              "game-panel/subdomains"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Billing Guides",
+        "groups": [
+          {
+            "group": "Billing Overview",
+            "icon": "credit-card",
+            "pages": [
+              "billing/overview"
+            ]
+          },
+          {
+            "group": "Payment Methods",
+            "icon": "wallet",
+            "pages": [
+              "billing/payment-methods",
+              "billing/coupon-codes",
+              "billing/invoices"
+            ]
+          },
+          {
+            "group": "Server Plans",
+            "icon": "server",
+            "pages": [
+              "billing/plan-comparison",
+              "billing/changing-plans",
+              "billing/cancellation"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "icon": "circle-question",
+            "pages": [
+              "billing/payment-issues",
+              "billing/refund-policy",
+              "billing/contact-support"
             ]
           }
         ]
