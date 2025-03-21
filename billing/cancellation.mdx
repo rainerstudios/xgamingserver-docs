@@ -1,0 +1,156 @@
+---
+title: "How to Cancel Your Service"
+description: "Step-by-step guide to canceling your XGamingServer hosting service"
+icon: "ban"
+---
+
+# How to Cancel Your Service
+
+If you need to cancel your XGamingServer service, this guide will walk you through the process. Before proceeding, consider if [pausing your server](./pause-server) might be a better option if you plan to return later.
+
+<Warning>
+  Canceling your service will result in the permanent deletion of all server data, including game files, configurations, and world saves. This action cannot be undone.
+</Warning>
+
+## Cancellation Process
+
+<Steps>
+  <Step title="Log in to your account">
+    Go to the [XGamingServer control panel](https://panel.xgamingserver.com) and log in with your credentials.
+  </Step>
+  
+  <Step title="Navigate to your services">
+    Click on "Billing" in the main navigation, then select "Services" from the dropdown menu.
+    
+    <Frame>
+      <img src="/images/billing/billing-services-menu.jpg" alt="Billing Services Menu" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select the service to cancel">
+    Locate the server you wish to cancel and click the "Manage" button.
+  </Step>
+  
+  <Step title="Request cancellation">
+    Scroll down to the "Service Actions" section and click the "Request Cancellation" button.
+    
+    <Frame>
+      <img src="/images/billing/cancel-service-button.jpg" alt="Cancel Service Button" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select cancellation type">
+    Choose between "Immediate Cancellation" or "End of Billing Cycle":
+    
+    - **Immediate Cancellation**: Service will be terminated right away (no refund for unused time)
+    - **End of Billing Cycle**: Service remains active until your current billing period ends
+    
+    <Frame>
+      <img src="/images/billing/cancellation-options.jpg" alt="Cancellation Options" />
+    </Frame>
+  </Step>
+  
+  <Step title="Provide cancellation reason">
+    Select a reason for cancellation from the dropdown menu and provide any additional feedback (optional but helpful).
+  </Step>
+  
+  <Step title="Confirm cancellation">
+    Click the "Request Cancellation" button to confirm your decision.
+    
+    <Warning>
+      This step initiates the cancellation process and cannot be easily reversed.
+    </Warning>
+  </Step>
+  
+  <Step title="Receive confirmation">
+    You'll receive an email confirming that your cancellation request has been processed.
+  </Step>
+</Steps>
+
+## What Happens After Cancellation
+
+After your service is canceled:
+
+- **Immediate Cancellation**: Your server will be shut down within minutes, and all data will be deleted after 48 hours
+- **End of Billing Cycle**: Your server remains active until the end of your current billing period, then data is deleted 48 hours after expiration
+- **Billing**: No further charges will be made for the canceled service
+- **Data Retention**: All server data, including configurations, world saves, and player data will be permanently deleted
+- **Domain
+cat >> billing/cancellation.mdx << 'EOL'
+Names**: Any custom domains will be unlinked from your server
+
+<Info>
+  We retain server backups for 7 days after cancellation. If you realize you need to recover data during this period, contact support immediately as recovery may be possible for a fee.
+</Info>
+
+## Special Cancellation Scenarios
+
+### PayPal Subscriptions
+
+If you pay through PayPal, you need to cancel both through our system AND through PayPal:
+
+1. Follow the steps above to cancel your service with XGamingServer
+2. Also cancel the recurring payment agreement in your PayPal account
+
+### Annual or Multi-Month Plans
+
+If you're on an annual or multi-month plan:
+
+- Cancellations are still processed as described above
+- Refunds for unused time may be available for annual plans, subject to our [refund policy](./refund-policy)
+- Contact our billing department for specific information about your plan
+
+## Alternatives to Cancellation
+
+Before finalizing your cancellation, consider these alternatives:
+
+<CardGroup cols={2}>
+  <Card title="Pause Your Server" icon="pause" href="./pause-server">
+    Temporarily pause your server at a reduced cost while preserving all data.
+  </Card>
+  <Card title="Downgrade Plan" icon="arrow-down" href="./changing-plans">
+    Switch to a smaller, more affordable server plan.
+  </Card>
+  <Card title="Transfer Ownership" icon="users-between-lines" href="./contact-support">
+    Transfer server ownership to another user.
+  </Card>
+  <Card title="Technical Support" icon="lifebuoy" href="./contact-support">
+    Get help with any technical issues you're experiencing.
+  </Card>
+</CardGroup>
+
+## Reactivating After Cancellation
+
+If you change your mind after cancellation:
+
+- **Before final deletion**: Contact support immediately to stop the cancellation process
+- **After deletion**: You'll need to order a new server and start fresh
+- **Seasonal players**: Consider using our [server pause feature](./pause-server) instead for future breaks
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Will I get a refund for unused time?">
+    For monthly services, we do not provide refunds for unused portions of the billing cycle. For annual plans, partial refunds may be available according to our refund policy.
+  </Accordion>
+  
+  <Accordion title="Can I download my data before cancellation?">
+    Yes, you can download your server data via SFTP prior to cancellation. See our [SFTP guide](/game-panel/sftp-connection) for instructions.
+  </Accordion>
+  
+  <Accordion title="How do I cancel multiple servers?">
+    You'll need to follow the cancellation process separately for each server you wish to cancel.
+  </Accordion>
+  
+  <Accordion title="Can I cancel and get the same server IP later?">
+    We cannot guarantee the same IP address for future services. If you anticipate returning, consider pausing your server instead.
+  </Accordion>
+</AccordionGroup>
+
+## Need More Help?
+
+If you have questions about canceling your service or need assistance with the process:
+
+- Contact our billing team at [billing@xgamingserver.com](mailto:billing@xgamingserver.com)
+- Open a support ticket through your [client area](https://panel.xgamingserver.com/support)
+- Use our live chat during business hours

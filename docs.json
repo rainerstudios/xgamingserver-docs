@@ -500,54 +500,20 @@
             ]
           },
           {
-            "group": "Payment Methods",
-            "icon": "wallet",
+            "group": "Managing Your Service",
+            "icon": "sliders",
             "pages": [
-              "billing/payment-methods",
-              "billing/coupon-codes",
-              "billing/invoices"
-            ]
-          },
-          {
-            "group": "Server Plans",
-            "icon": "server",
-            "pages": [
-              "billing/plan-comparison",
-              "billing/changing-plans",
-              "billing/cancellation"
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "circle-question",
-            "pages": [
-              "billing/payment-issues",
+              "billing/upgrading-service",
+              "billing/cancellation",
               "billing/refund-policy",
-              "billing/contact-support"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "billing/pending-order",
+              "billing/suspensions-terminations",
+              "billing/order-fraud"
             ]
           }
         ]
       }
+     
     ]
   },
   "logo": {

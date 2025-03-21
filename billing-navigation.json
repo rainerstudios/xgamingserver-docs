@@ -1,0 +1,24 @@
+{
+  "tab": "Billing Guides",
+  "groups": [
+    {
+      "group": "Billing Overview",
+      "icon": "credit-card",
+      "pages": [
+        "billing/overview"
+      ]
+    },
+    {
+      "group": "Managing Your Service",
+      "icon": "sliders",
+      "pages": [
+        "billing/upgrading-service",
+        "billing/cancellation",
+        "billing/refund-policy",
+        "billing/pending-order",
+        "billing/suspensions-terminations",
+        "billing/order-fraud"
+      ]
+    }
+  ]
+}
