@@ -4,176 +4,157 @@ description: "How to set up automatic server restarts and scheduled tasks"
 icon: "clock"
 ---
 
-# Configuring Server Restart Schedules
+# How to Create Schedules on XGamingServer
 
-Regular server restarts help maintain server performance, apply updates, and clear memory leaks. This guide will show you how to set up automated restart schedules and other recurring tasks on your XGamingServer.
+Whether you want to restart your server every night, run a backup, or execute a custom command at a specific time — **Schedules** make that magic happen. Here’s a step-by-step guide to creating schedules in your XGamingServer panel.
 
-## Why Schedule Server Restarts?
+---
 
-Scheduled restarts provide several benefits:
+<Steps>
+  <Step title="Log into the Panel">
+    1. Go to [panel.xgamingserver.com](https://panel.xgamingserver.com)
+    2. Log in with your credentials.
+    3. Click on your **server** to open its dashboard.
+  </Step>
+  <Step title="Open the Schedule Section">
+    1. On the top bar, click **Schedules**.
+    2. Hit the **Create Schedule** button.
 
-- Improved server performance and stability
-- Automatic clearing of RAM usage
-- Application of small updates without manual intervention
-- Prevention of common issues that develop over time
-- Predictable downtime for your players
+    ![Screenshot2025 04 07123337 Pn](/images/Screenshot2025-04-07123337.png)
+  </Step>
+  <Step title="Configure Your Schedule">
+    ![image.png](/image.png)
 
-## Accessing the Scheduler
+    Fill in the required fields:
 
-To access the scheduling system:
+    - **Schedule Name**: e.g. `Daily Restart`
+    - **Enabled**: Toggle ON to activate immediately
+    - **Only When Online**: Optional — use if schedule should only run while the server is online
+    - **Cronjob Time**: Input the CRON expression that defines when the task runs
 
-1. Log in to your [XGamingServer control panel](https://panel.xgamingserver.com)
-2. Select your game server
-3. Navigate to the **Schedules** tab
-4. Click the **Create Schedule** button
+    > 💡 Use [crontab.guru](https://crontab.guru/) if you're new to CRON syntax.
 
-<Frame>
-  <img src="/images/game-panel/schedules-panel.jpg" alt="Server Schedules Panel" />
-</Frame>
+    Example for daily at 3AM: `0 3 * * *`
+  </Step>
+  <Step title="Add Tasks">
+    ![image.png](/image.png)
 
-## Creating a Basic Restart Schedule
+    Once the schedule is created, you'll be taken to the **task list**.
 
-To set up a basic server restart schedule:
+    1. Click **"New Task"**.
+    2. Choose an **action**:
+       - `Send Power Action` – e.g., restart, stop, start
+       - `Send Command` – run a specific command
+       - `Create Backup` – (if backup is available for your server)
+    3. Set a **Delay (in seconds)** — if you want it to wait a bit before running. For example:
+       - Task 1: Stop server (0 sec)
+       - Task 2: Start server (10 sec)
+    4. Click **"Create Task"**.
 
-1. Click **Create Schedule**
-2. Enter a name for your schedule (e.g., "Daily Morning Restart")
-3. Select your schedule timing:
-   - **Minute**: The minute of the hour (0-59)
-   - **Hour**: The hour of the day (0-23, using 24-hour format)
-   - **Day of Month**: The day of the month (1-31)
-   - **Month**: The month of the year (1-12)
-   - **Day of Week**: The day of the week (0-6, where 0 is Sunday)
-4. Select **Send Command** as the task type
-5. In the command field, enter a restart command appropriate for your game
-6. Enable the **Only When Server Is Online** option
-7. Click **Create Schedule**
+    💡 _Tip: For a daily restart, create two tasks: Stop → Start, with 10–30s delay between them._
 
-<Frame>
-  <img src="/images/game-panel/create-schedule.jpg" alt="Creating a Restart Schedule" />
-</Frame>
+    ![image.png](/image.png)
+  </Step>
+  <Step title="Save and Wait">
+    That’s it\! The schedule will now run according to the CRON time you set. You can always:
 
-### Common Restart Commands
+    - **Edit** the schedule or tasks.
+    - **Enable/disable** schedules.
+    - **Manually run** the schedule with the ▶️ button if you want to test it.
+  </Step>
+</Steps>
 
-Different games may use different restart commands:
+---
 
-| Game | Restart Command |
-|------|----------------|
-| Minecraft | `say Server restarting in 1 minute! && sleep 50 && say Server restarting in 10 seconds! && sleep 10 && stop` |
-| Valheim | `broadcast "Server restarting in 60 seconds..." 60 server_restart` |
-| ARK | `broadcast Server restarting in 60 seconds... && save world && sleep 60 && quit` |
-| Rust | `say "Server restarting in 60 seconds" && sleep 60 && quit` |
-| 7 Days to Die | `shutdown 60` |
+##  Common Examples
 
-<Tip>
-  Add warning messages to your restart commands to notify players before the server goes down.
-</Tip>
+| Task                 | CRON           | Description                   |
+| :------------------- | :------------- | :---------------------------- |
+| Daily restart at 3AM | `0 3 * * *`    | Stops and starts server daily |
+| Every 6 hours        | `0 */6 * * *`  | Runs every 6 hours            |
+| Every Friday at 10PM | `0 22 * * 5`   | Weekly Friday night task      |
+| Every 15 mins        | `*/15 * * * *` | For fast auto-tasks           |
 
-## Schedule Timing Examples
+---
 
-Here are some common scheduling patterns:
+##  Need Help?
 
-| Schedule Description | Minute | Hour | Day (Month) | Month | Day (Week) |
-|---------------------|--------|------|-------------|-------|------------|
-| Every day at 3 AM | 0 | 3 | * | * | * |
-| Every 6 hours | 0 | 0,6,12,18 | * | * | * |
-| Every Sunday at 4 AM | 0 | 4 | * | * | 0 |
-| First day of every month | 0 | 0 | 1 | * | * |
-| Every 12 hours | 0 | 0,12 | * | * | * |
+If something breaks or you’re unsure, hit up support or our Discord — we got you 👊
 
-<Info>
-  The asterisk (*) represents "every" in CRON notation. For example, * in the Month field means "every month."
-</Info>
+---
 
-## Advanced Scheduling Options
+_(The content below from "⚡ Schedule Examples and What You Can Do" can be included here or on a separate page as needed)_
 
-### Creating a Warning Schedule
+# Schedule Examples and What You Can Do
 
-For a smoother player experience, set up warning messages before restarts:
+Schedules on XGamingServer give you powerful automation — from server restarts to running backups or even sending commands in-game. Below are real-world examples and use cases to inspire how you can use them effectively.
 
-1. Create a new schedule
-2. Time it 5-10 minutes before your restart schedule
-3. Select **Send Command** as the task type
-4. Enter a warning command (e.g., `say Server will restart in 10 minutes`)
-5. Click **Create Schedule**
+## Auto Restart Server
 
-### Chaining Multiple Commands
+Keeping your server fresh and lag-free is easy with a daily restart.
 
-You can chain multiple commands in a single schedule by using `&&` between commands:
+- **CRON**: `0 4 * * *`
+- **Task 1**: Send Power Action → Stop (0s delay)
+- **Task 2**: Send Power Action → Start (30s delay)
+- **Use Case**: Restart server daily at 4AM when no one is online.
 
-```
-say Server maintenance in 5 minutes && sleep 240 && say Server maintenance in 1 minute && sleep 60 && stop
-```
+## Automated Backups
 
-### Running a Specific Game Script
+Take daily or weekly backups to avoid losing progress.
 
-If your game uses scripts for certain functions:
+- **CRON**: `0 2 * * *`
+- **Task**: Create Backup (0s delay)
+- **Use Case**: Daily backup at 2AM. Make sure you're on a plan that supports this feature.
 
-1. Create a new schedule
-2. Select **Send Command** as the task type
-3. Reference your script (e.g., `runscript backup_world.lua`)
-4. Click **Create Schedule**
+## in-Game Warning \+ Restart
 
-## Managing Your Schedules
+Send players a warning before kicking them for a restart.
 
-To manage your existing schedules:
+- **CRON**: `0 5 * * *`
+- **Task 1**: Send Command `say Server will restart in 1 minute!` (0s delay)
+- **Task 2**: Send Power Action → Restart (60s delay)
+- **Use Case**: Restart server every morning with player notification.
 
-- **Edit**: Click the edit button next to a schedule to modify its settings
-- **Delete**: Click the delete button to remove a schedule
-- **Disable/Enable**: Toggle the switch to temporarily disable or enable a schedule
-- **Run Now**: Click the "Run Now" button to execute a schedule immediately
+##  Auto-Clear In-Game Items
 
-<Frame>
-  <img src="/images/game-panel/manage-schedules.jpg" alt="Managing Schedules" />
-</Frame>
+Run cleanup commands on sandbox games (like Minecraft or Rust).
 
-## Best Practices for Server Restarts
+- **CRON**: `*/30 * * * *`
+- **Task**: Send Command `/clearitems` or your game’s equivalent (0s delay)
+- **Use Case**: Prevent item lag by auto-clearing dropped items every 30 minutes.
 
-- **Off-peak scheduling**: Schedule restarts during low-activity periods
-- **Consistent timing**: Use the same time each day to create a predictable pattern for players
-- **Multiple warnings**: Set up multiple warning messages (e.g., at 10 minutes, 5 minutes, and 1 minute)
-- **Avoid frequent restarts**: Most servers only need 1-2 restarts per day
-- **Document for players**: Let your community know about your restart schedule
+##  Schedule Server Downtime
 
-## Game-Specific Recommendations
+Want the server offline during certain hours?
 
-### Minecraft Servers
+- **Schedule 1 (Stop)**: CRON: `0 0 * * *` → Task: Send Power Action → Stop (0s delay)
+- **Schedule 2 (Start)**: CRON: `0 6 * * *` → Task: Send Power Action → Start (0s delay)
+- **Use Case**: Keep server offline from midnight to 6AM to reduce load or enforce offline hours. (Requires two separate schedules)
 
-For Minecraft servers, a common schedule includes:
-- A restart every 6-12 hours
-- A memory cleanup command 30 minutes before restart
-- Clear warning messages for players
+##  Reset PvP Zones or Events
 
-### Valheim Servers
+Automate in-game events that reset maps or PvP zones.
 
-For Valheim servers:
-- A restart every 24 hours is usually sufficient
-- Use the broadcast command to warn players
-- Consider scheduling during typical off-hours for your player base
+- **CRON**: `0 */6 * * *`
+- **Task**: Send Command `/resetarena` (0s delay)
+- **Use Case**: Reset event zones every 6 hours in survival or competitive servers.
 
-### ARK: Survival Evolved
+## Pro Tips
 
-For ARK servers:
-- Schedule restarts every 12 hours
-- Always include a `save world` command before restarting
-- Give players at least 15 minutes of warnings
+- Use `Send Command` to run mods/scripts or custom cleanup
+- Combine multiple tasks for multi-step automation
+- Use `Only When Online` toggle to avoid unnecessary runs
+- Adjust delays carefully to avoid overlapping actions
 
-## Troubleshooting Scheduled Tasks
+##  Advanced Setup
 
-### Schedule Not Running
+Want to do something really specific like:
 
-If your schedule isn't running:
-1. Verify the server is online (if you selected "Only When Server Is Online")
-2. Check that the timing configuration is correct
-3. Ensure the command syntax is appropriate for your game
-4. Check server logs for errors
+- Auto-switch game modes?
+- Change configs via command?
+- Rotate maps or mods?
+  Yes, you can schedule those too — as long as your game supports commands/scripts to trigger them. Just schedule them using the **Send Command** action.
 
-### Command Errors
+---
 
-If your scheduled command produces errors:
-1. Test the command manually in the console first
-2. Check server logs immediately after the scheduled time
-3. Verify you're using the correct command format for your game version
-
-## Need More Help?
-
-If you need assistance with scheduling, please [contact our support team](mailto:support@xgamingserver.com) or visit our [knowledge base](https://help.xgamingserver.com).
+Got a cool use case? Share it with the community on our [Discord](https://discord.gg/xgamingserver)\!
