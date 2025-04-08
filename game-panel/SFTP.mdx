@@ -1,0 +1,90 @@
+---
+title: "Connecting via SFTP on XGamingServer"
+---
+
+Learn how to securely access your server files using SFTP with step-by-step instructions and practical examples.
+
+## How to Connect via SFTP on XGamingServer
+
+Whether you need to modify configuration files, upload plugins/mods, or download backups - SFTP gives you secure file access. Here's how to set it up:
+
+### Gather Your SFTP Credentials
+
+<Steps>
+  <Step title="Login into the Panel">
+    1. Go to [**panel.xgamingserver.com**](http://panel.xgamingserver.com)
+    2. Log in with your credentials.
+    3. Click on your **server** to open its dashboard.
+  </Step>
+  <Step title="Open the Settings tab">
+    1. On the top bar, click **Settings**.
+
+       ![Settings Sv](/SVG/Settings.svg)
+  </Step>
+  <Step title="Connecting Via Filezilla/WinSCP Quick login">
+    1. **Click "Launch SFTP"** in your Pterodactyl panel - this auto-opens your default SFTP client (FileZilla/WinSCP) with all connection details pre-filled.
+    2. **Just enter your password** when prompted - the host, port, and username will already be populated for instant access.
+
+       ![SFTP Sv](/SVG/SFTP.svg)
+  </Step>
+  <Step title="Manual connection on Filezilla and WinSCP">
+    1. **FileZilla**: Open _Site Manager_ → New Site → Enter **Host** (`sftp.xgamingserver.com`), **Port** (`2022`), **Username** (`your@email-server`), and **Protocol** (_SFTP_) → Click _Connect_ → **Enter password** when prompted.
+    2. **WinSCP**: Launch → _New Session_ → Select _SFTP_ → Fill **Hostname** (`sftp.xgamingserver.com`), **Port** (`2022`), and **Username** (`your@email-server`) → Click _Login_ → **Type password** to connect.
+  </Step>
+</Steps>
+
+#### Command Line (Linux/Mac):
+
+Copy
+
+```
+sftp -P 2022 yourpanelemail-server@sftp.xgamingserver.com
+```
+
+(Enter password when prompted)
+
+### Common 
+
+#### Uploading Files:
+
+1. Locate files on your local machine (left panel in FileZilla)
+2. Drag them to the desired server directory (right panel)
+
+#### Downloading Files:
+
+1. Right-click server files → "Download"
+2. Files will transfer to your local machine
+
+## Practical Examples
+
+### Example 1: Uploading a Minecraft Plugin
+
+1. Connect via SFTP
+2. Navigate to /home/container/plugins/
+3. Drag yourplugin.jar from local computer
+4. Restart server through panel
+
+### Example 2: Editing Server Configuration
+
+1. Connect via SFTP
+2. Download [server.properties](http://server.properties)
+3. Edit with text editor
+4. Upload back to server
+5. Restart server
+
+## Troubleshooting Common Issues
+
+### Connection Problems:
+
+- "Connection refused" → Verify server is online
+- "Authentication failed" → Double-check username format (must include -server suffix)
+- "Host key verification" → Delete known_hosts file and retry
+
+### 
+
+## Security Best Practices
+
+1. Always use SFTP (not regular FTP)
+2. Never share your SFTP credentials
+3. Make backups before modifying files
+4. Disconnect when not in use
