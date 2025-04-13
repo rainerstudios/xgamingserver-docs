@@ -1,0 +1,176 @@
+---
+title: "Managing Users and Subusers"
+---
+
+Learn how to add, configure, and manage subusers for your XGamingServer instance in the Pterodactyl Panel. This guide will help you delegate access securely while maintaining control over your server.
+
+---
+
+## Overview
+
+The **Pterodactyl Panel** allows server owners to collaborate with others by adding **subusers**. Subusers are secondary accounts that can be granted limited permissions to perform specific tasks (e.g., managing files, sending console commands).
+
+### Key Concepts
+
+- **Primary User**: The account that created the server. It has full administrative access.
+- **Subusers**: Additional users invited by the primary user. They have restricted access based on assigned permissions.
+
+<info>
+  Subusers are ideal for delegating responsibilities to trusted admins or friends without sharing your primary account credentials.
+</info>
+
+---
+
+## Adding a Subuser
+
+### Step 1: Access Subuser Settings
+
+1. Log in to the [Pterodactyl Panel](https://your-ptero-domain.com).
+2. Select the server you want to manage from the server list.
+3. Navigate to the **Subusers** tab in the server dashboard.
+
+### Step 2: Invite a Subuser
+
+1. Enter the **email address** of the user you want to invite.
+   - Ensure the email matches their Pterodactyl account.
+2. Assign permissions (see [Permission Levels](#permission-levels) below).
+3. Click **Create Subuser** to send the invitation.
+
+<warning>
+  The invited user must already have a Pterodactyl account registered with the same email address. If they don’t, ask them to create one before proceeding.
+</warning>
+
+---
+
+## Permission Levels
+
+When inviting a subuser, you can assign specific permissions. Below is a detailed breakdown of each permission and its use cases:
+
+| Permission            | Description                               | Use Case Examples                                               |
+| --------------------- | ----------------------------------------- | --------------------------------------------------------------- |
+| **Console Access**    | View/send commands to the server console. | Admins who need to run game commands.                           |
+| **Start/Stop**        | Control server power state.               | Moderators who restart the server after crashes.                |
+| **File Management**   | Edit, upload, or delete server files.     | Developers managing plugins/mods/configs.                       |
+| **Backup Management** | Create/restore backups.                   | Backup operators ensuring data safety.                          |
+| **User Management**   | Add/remove other subusers.                | Rarely recommended; avoid granting unless absolutely necessary. |
+
+<info>
+  Grant only the permissions necessary for the subuser’s role. For example, a moderator might need **Console Access** but not **File Management**.
+</info>
+
+---
+
+## Editing Permissions
+
+If you need to adjust a subuser’s permissions:
+
+### Step 1: Locate the Subuser
+
+1. Go to the **Subusers** tab in the server dashboard.
+2. Find the subuser you want to modify.
+
+### Step 2: Modify Permissions
+
+1. Click **Edit** next to the subuser.
+2. Adjust their permissions as needed.
+3. Save changes.
+
+<tip>
+  Changes take effect immediately. There’s no need to log out or restart the server.
+</tip>
+
+---
+
+## Removing a Subuser
+
+If a subuser no longer needs access to your server:
+
+### Step 1: Locate the Subuser
+
+1. Go to the **Subusers** tab in the server dashboard.
+2. Find the subuser you want to remove.
+
+### Step 2: Delete the Subuser
+
+1. Click **Delete** next to the subuser.
+2. Confirm the action when prompted.
+
+<warning>
+  Removing a subuser revokes all access immediately. Ensure this is intentional, as the subuser will no longer be able to interact with your server.
+</warning>
+
+---
+
+## Best Practices
+
+To ensure secure and efficient subuser management, follow these guidelines:
+
+### 1. **Principle of Least Privilege**
+
+- Only grant permissions necessary for the subuser’s role. For example:
+  - A moderator might need **Console Access** but not **File Management**.
+  - A developer might need **File Management** but not **User Management**.
+
+### 2. **Regular Audits**
+
+- Periodically review your subusers and their permissions.
+- Remove inactive or unnecessary subusers.
+
+### 3. **Enable Two-Factor Authentication (2FA)**
+
+- Require subusers to enable 2FA on their accounts to prevent unauthorized access.
+
+### 4. **Avoid Sharing Primary Credentials**
+
+- Never share your primary account credentials with others. Always use subusers for delegation.
+
+---
+
+## Troubleshooting
+
+### Issue: Subuser Not Receiving Invitation
+
+- **Cause**: The email may not match their Pterodactyl account, or the invitation email was filtered as spam.
+- **Solution**:
+  1. Verify the email matches their Pterodactyl account.
+  2. Ask the subuser to check their spam/junk folder.
+  3. Resend the invitation if necessary.
+
+### Issue: Subuser Lacks Expected Access
+
+- **Cause**: Incorrect permissions were assigned during setup.
+- **Solution**:
+  1. Go to the **Subusers** tab.
+  2. Edit the subuser’s permissions and ensure all required permissions are enabled.
+
+### Issue: Subuser Cannot Log In
+
+- **Cause**: The subuser’s Pterodactyl account may be inactive or locked.
+- **Solution**:
+  1. Ask the subuser to verify their account status.
+  2. Ensure they can log in to the Pterodactyl Panel independently.
+
+---
+
+## Advanced Use Cases
+
+### 1. **Multi-Admin Servers**
+
+For servers with multiple admins, assign roles based on responsibilities:
+
+- **Lead Admin**: Full access except **User Management**.
+- **Moderator**: Console Access and Start/Stop permissions.
+- **Developer**: File Management and Backup Management.
+
+### 2. **Event-Based Access**
+
+Grant temporary access to subusers for specific events (e.g., tournaments):
+
+1. Add the subuser before the event.
+2. Remove the subuser after the event concludes.
+
+### 3. **Automated Monitoring**
+
+Use subusers with limited permissions (e.g., **Console Access**) to monitor server health via third-party tools.
+
+---

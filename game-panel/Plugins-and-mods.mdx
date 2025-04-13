@@ -1,0 +1,165 @@
+---
+title: "Managing Plugins and Modpacks"
+---
+
+The XGamingServer control panel provides powerful tools for managing mods on your game servers, including dedicated tabs for **Plugins** and **Modpacks**. These features simplify the process of installing, configuring, and maintaining mods without manual file uploads.
+
+---
+
+## Overview
+
+- **Plugins Tab**:
+  - Focuses on installing individual mods (plugins) for your server.
+  - Allows you to filter mods based on provider, plugin loader, and Minecraft version.
+- **Modpacks Tab**:
+  - Enables you to install pre-configured modpacks (collections of mods) from trusted sources like Modrinth or CurseForge.
+  - Simplifies setting up complex modded servers by handling dependencies automatically.
+
+<info>
+  This guide assumes you’re using a Minecraft server with Paper as the plugin loader. Adjust settings as needed for other games or loaders.
+</info>
+
+---
+
+## Key Features
+
+### Plugins Tab
+
+#### Filters and Options
+
+1. **Provider**:
+   - Selects where mods are sourced from (e.g., Modrinth, CurseForge).
+2. **Page Size**:
+   - Controls how many mods are displayed per page.
+3. **Plugin Loader**:
+   - Ensures compatibility with your server’s mod loader (e.g., Paper, Forge, Fabric).
+4. **Minecraft Version**:
+   - Filters mods based on your server’s Minecraft version.
+5. **Search Query**:
+   - Searches for specific mods by name or keyword.
+
+#### Workflow
+
+1. Filter mods based on your server’s configuration.
+2. Search for the desired mod.
+3. Click **Install** to add the mod to your server.
+
+### Modpacks Tab
+
+#### Filters and Options
+
+1. **Provider**:
+   - Selects where modpacks are sourced from (e.g., Modrinth, CurseForge).
+2. **Page Size**:
+   - Controls how many modpacks are displayed per page.
+3. **Search Query**:
+   - Searches for specific modpacks by name or keyword.
+
+#### Workflow
+
+1. Filter modpacks based on your server’s configuration.
+2. Search for the desired modpack.
+3. Click **Install** to add the modpack to your server.
+
+---
+
+## Step-by-Step Guide
+
+### Installing Mods via the Plugins Tab
+
+#### Step 1: Access the Plugins Tab
+
+1. Log in to the [Pterodactyl Panel](https://your-ptero-domain.com).
+2. Select your server from the server list.
+3. Navigate to the **Plugins** tab in the server dashboard.
+
+#### Step 2: Configure Filters
+
+1. **Provider**: Choose the source provider (e.g., Modrinth).
+2. **Page Size**: Set the number of mods displayed per page.
+3. **Plugin Loader**: Select your server’s mod loader (e.g., Paper).
+4. **Minecraft Version**: Ensure the correct Minecraft version is selected.
+5. **Search Query**: Enter keywords to find specific mods.
+
+#### Step 3: Install the Mod
+
+1. Browse through the list of available mods.
+2. Click **Install** next to the desired mod.
+3. Wait for the installation process to complete.
+
+### Installing Modpacks via the Modpacks Tab
+
+#### Step 1: Access the Modpacks Tab
+
+1. Log in to the [Pterodactyl Panel](https://your-ptero-domain.com).
+2. Select your server from the server list.
+3. Navigate to the **Modpacks** tab in the server dashboard.
+
+#### Step 2: Configure Filters
+
+1. **Provider**: Choose the source provider (e.g., Modrinth).
+2. **Page Size**: Set the number of modpacks displayed per page.
+3. **Search Query**: Enter keywords to find specific modpacks.
+
+#### Step 3: Install the Modpack
+
+1. Browse through the list of available modpacks.
+2. Click **Install** next to the desired modpack.
+3. Wait for the installation process to complete.
+
+---
+
+## Managing Installed Mods
+
+After installing mods or modpacks, you can manage them directly from the respective tabs.
+
+### Updating Mods/Modpacks
+
+1. Go to the **Plugins** or **Modpacks** tab.
+2. Check for updates next to each installed item.
+3. Click **Update** to install the latest version.
+
+### Removing Mods/Modpacks
+
+1. Go to the **Plugins** or **Modpacks** tab.
+2. Find the item you want to remove.
+3. Click **Uninstall** to remove it from your server.
+
+<warning>
+  Always back up your server before updating or removing mods/modpacks to prevent data loss or conflicts.
+</warning>
+
+---
+
+## Troubleshooting Common Issues
+
+### Issue: Mod Not Working After Installation
+
+- **Cause**: Missing dependencies or incorrect configuration.
+- **Solution**:
+  1. Check the mod’s documentation for required dependencies.
+  2. Verify configuration files are set up correctly.
+
+### Issue: Server Crashes After Installing a Mod/Modpack
+
+- **Cause**: Incompatible or corrupted mod/modpack.
+- **Solution**:
+  1. Uninstall the problematic mod/modpack immediately.
+  2. Restore your server from a backup if necessary.
+
+### Issue: Mods/Modpacks Not Showing in the List
+
+- **Cause**: Your game server may not support mods/modpacks, or the feature is disabled.
+- **Solution**:
+  1. Verify that your game supports mods/modpacks.
+  2. Contact support if the feature is unavailable.
+
+---
+
+## Best Practices
+
+- **Filter Properly**: Always filter mods/modpacks by provider, Minecraft version, and plugin loader to ensure compatibility.
+- **Test Updates**: Before updating mods/modpacks, test them on a staging server to avoid unexpected issues.
+- **Backup Regularly**: Use the Pterodactyl Panel’s built-in backup tools to protect your server data.
+
+---

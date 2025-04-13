@@ -1,0 +1,185 @@
+# Security Best Practices  
+
+Securing your server is critical to protect it from unauthorized access, data breaches, and malicious attacks. This guide outlines best practices for securing your XGamingServer instance on the Pterodactyl Panel.  
+
+---
+
+## Overview  
+
+The **Pterodactyl Panel** provides robust tools to manage your game servers securely. However, server security also depends on proactive measures taken by you and your subusers. Follow these best practices to minimize risks and ensure a safe hosting environment.  
+
+---
+
+## 1. Enable Two-Factor Authentication (2FA)  
+
+### Why It's Important  
+Two-factor authentication adds an extra layer of security by requiring a second form of verification (e.g., a code from an authenticator app) in addition to your password.  
+
+### Steps to Enable 2FA  
+1. Log in to the Pterodactyl Panel.  
+2. Navigate to your account settings.  
+3. Enable 2FA using an app like Google Authenticator or Authy.  
+4. Save the recovery codes in a secure location.  
+
+<Callout type="warning">  
+Never share your recovery codes with anyone. They can be used to bypass 2FA if your device is lost or stolen.  
+</Callout>  
+
+---
+
+## 2. Use Strong Passwords  
+
+### Why It's Important  
+Weak passwords are vulnerable to brute-force attacks. A strong password reduces the risk of unauthorized access.  
+
+### Tips for Strong Passwords  
+- Use at least 12 characters.  
+- Include uppercase, lowercase, numbers, and special characters.  
+- Avoid common words, phrases, or patterns.  
+- Use a password manager to generate and store unique passwords.  
+
+---
+
+## 3. Secure Subuser Permissions  
+
+### Why It's Important  
+Subusers with excessive permissions can accidentally or intentionally cause harm. Limit their access to only what they need.  
+
+### Best Practices  
+- Assign the **least privilege** necessary for each subuser’s role.  
+- Regularly review and revoke unnecessary subuser accounts.  
+- Require subusers to enable 2FA on their accounts.  
+
+<Callout type="info">  
+For example, a moderator might only need **Console Access**, while a developer might need **File Management** and **Backup Management**.  
+</Callout>  
+
+---
+
+## 4. Keep Software Updated  
+
+### Why It's Important  
+Outdated software (e.g., game servers, plugins, mods) may contain vulnerabilities that attackers can exploit.  
+
+### Steps to Stay Updated  
+- Regularly check for updates to your game server software.  
+- Update plugins/mods to their latest versions.  
+- Monitor community forums or changelogs for security patches.  
+
+<Callout type="tip">  
+Automate updates where possible, but test them in a staging environment first to avoid breaking changes.  
+</Callout>  
+
+---
+
+## 5. Protect Against DDoS Attacks  
+
+### Why It's Important  
+Distributed Denial of Service (DDoS) attacks overwhelm your server with traffic, causing downtime.  
+
+### Mitigation Strategies  
+- Use a hosting provider with built-in DDoS protection (e.g., OVH, Hetzner).  
+- Enable Cloudflare or another CDN to absorb malicious traffic.  
+- Configure rate-limiting rules on your firewall to block excessive requests.  
+
+<Callout type="warning">  
+If you experience a DDoS attack, contact your hosting provider immediately for assistance.  
+</Callout>  
+
+---
+
+## 6. Secure Network Configuration  
+
+### Why It's Important  
+Improper network settings can expose your server to external threats.  
+
+### Best Practices  
+- Open only the ports required for your server (e.g., game traffic, RCON).  
+- Avoid exposing sensitive services (e.g., SSH, database ports) to the public internet.  
+- Use firewalls to restrict access to trusted IP addresses.  
+
+<Callout type="info">  
+Refer to our [Adding Additional Server Ports](/guides/additional-server-ports) guide for instructions on managing ports.  
+</Callout>  
+
+---
+
+## 7. Regularly Back Up Your Server  
+
+### Why It's Important  
+Backups allow you to recover quickly from data loss, corruption, or ransomware attacks.  
+
+### Backup Strategies  
+- Schedule automatic backups daily or weekly.  
+- Store backups in a secure, off-site location (e.g., cloud storage).  
+- Test restoring backups periodically to ensure they work.  
+
+<Callout type="tip">  
+Use the Pterodactyl Panel’s built-in backup tools or third-party solutions for additional redundancy.  
+</Callout>  
+
+---
+
+## 8. Monitor Logs and Activity  
+
+### Why It's Important  
+Logs provide insights into server activity and help detect suspicious behavior.  
+
+### Steps to Monitor Logs  
+- Check live logs in the Pterodactyl Panel regularly.  
+- Look for unusual login attempts, commands, or errors.  
+- Set up alerts for critical events (if supported by your hosting provider).  
+
+<Callout type="info">  
+For example, repeated failed login attempts may indicate a brute-force attack.  
+</Callout>  
+
+---
+
+## 9. Secure File Uploads  
+
+### Why It's Important  
+Malicious files uploaded to your server can compromise its security.  
+
+### Best Practices  
+- Restrict file uploads to trusted users only.  
+- Scan uploaded files for malware using antivirus tools.  
+- Avoid running untrusted plugins/mods unless they’re from reputable sources.  
+
+---
+
+## 10. Educate Your Team  
+
+### Why It's Important  
+Even the best security measures can fail if your team isn’t aware of best practices.  
+
+### Training Tips  
+- Teach subusers about phishing attacks and social engineering.  
+- Emphasize the importance of strong passwords and 2FA.  
+- Provide clear guidelines for handling sensitive data.  
+
+---
+
+## Troubleshooting Security Issues  
+
+### Issue: Unauthorized Access Detected  
+- **Cause**: Weak passwords, missing 2FA, or compromised credentials.  
+- **Solution**:  
+  1. Change all passwords immediately.  
+  2. Enable 2FA for all accounts.  
+  3. Review subuser permissions and remove suspicious accounts.  
+
+### Issue: Server Crashes After Plugin/Mod Update  
+- **Cause**: Incompatible or malicious plugin/mod.  
+- **Solution**:  
+  1. Roll back to the previous version using backups.  
+  2. Verify the plugin/mod source before reinstalling.  
+
+### Issue: Excessive Traffic or Downtime  
+- **Cause**: Potential DDoS attack.  
+- **Solution**:  
+  1. Contact your hosting provider for mitigation.  
+  2. Enable additional protection (e.g., Cloudflare).  
+
+---
+

@@ -4,25 +4,92 @@ description: "How to import servers from other providers"
 icon: "file-import"
 ---
 
-# Server Importer
+# Server Importer  
 
-This documentation will help you understand how to use the Server Importer feature on XGamingServer.
+This guide explains how to use the **Server Importer** feature on XGamingServer to migrate your game servers from other hosting providers. This feature simplifies the process of transferring server files, configurations, and databases to XGamingServer.  
 
-## Overview
+---
 
-The Server Importer feature allows you to...
+## Overview  
 
-## Getting Started
+The **Server Importer** allows you to seamlessly migrate your existing game servers from other providers to XGamingServer. It automates tasks like downloading server files, importing configurations, and setting up dependencies, saving you time and effort.  
 
-1. Log in to your [XGamingServer control panel](https://panel.xgamingserver.com)
-2. Select your game server
-3. ...
+<Callout type="info">  
+Supported providers include popular services like Multicraft, Pterodactyl, and custom setups. If your provider isn’t listed, contact support for assistance.  
+</Callout>  
 
-## More Information
+---
 
-For more detailed instructions, examples, and troubleshooting, please refer to our comprehensive guide.
+## Getting Started  
 
-## Related Guides
+### Step 1: Log in to Your Control Panel  
+1. Navigate to the [XGamingServer control panel](https://panel.xgamingserver.com).  
+2. Log in with your credentials.  
+
+### Step 2: Access the Server Importer  
+1. From the dashboard, click **Create New Server**.  
+2. Select the **Import Server** option.  
+
+### Step 3: Provide Server Details  
+1. **Select Provider**: Choose your current hosting provider from the dropdown menu (e.g., Multicraft, Pterodactyl, or Custom).  
+2. **Enter Credentials**: Provide the required credentials for your existing server:  
+   - SFTP username/password or SSH key.  
+   - Database credentials (if applicable).  
+
+   ```text
+   Example:  
+   SFTP Host: sftp.example.com  
+   SFTP Username: user123  
+   SFTP Password: ********  
+   ```
+
+3. **Verify Connection**: Click **Test Connection** to ensure XGamingServer can access your server files.  
+
+### Step 4: Import Server Files  
+1. Once the connection is verified, select the files and folders you want to import.  
+   - Common folders include `world`, `plugins`, `mods`, and `configs`.  
+2. Click **Start Import** to begin transferring files to XGamingServer.  
+
+### Step 5: Configure Imported Server  
+1. After the import is complete, review the imported files and configurations.  
+2. Update any outdated settings or dependencies as needed.  
+3. Restart the server to apply changes.  
+
+<Callout type="warning">  
+Ensure all plugins/mods are compatible with your new server setup. Incompatible mods may cause crashes or errors.  
+</Callout>  
+
+---
+
+## More Information  
+
+For advanced instructions, examples, and troubleshooting, refer to our [Comprehensive Server Importer Guide](/guides/server-importer).  
+
+---
+
+## Troubleshooting  
+
+### Issue: Connection Failed  
+- **Cause**: Incorrect credentials or firewall restrictions.  
+- **Solution**:  
+  1. Verify your SFTP/SSH credentials.  
+  2. Ensure your firewall allows connections from XGamingServer IPs.  
+
+### Issue: Missing Files After Import  
+- **Cause**: Some files may not have been selected during the import process.  
+- **Solution**:  
+  1. Re-run the import process and select all required files.  
+  2. Manually upload missing files via the File Manager.  
+
+### Issue: Server Crashes After Import  
+- **Cause**: Incompatible plugins/mods or missing dependencies.  
+- **Solution**:  
+  1. Check server logs for error messages.  
+  2. Update or remove incompatible plugins/mods.  
+
+---
+
+## Related Guides  
 
 <CardGroup cols={2}>
   <Card title="Game Panel Overview" icon="server-tower" href="./overview">
@@ -32,3 +99,5 @@ For more detailed instructions, examples, and troubleshooting, please refer to o
     Connect to your server using SFTP
   </Card>
 </CardGroup>
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Server Importer Guide](/guides/server-importer). 🚀  
